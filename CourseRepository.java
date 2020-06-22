@@ -8,14 +8,41 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import java.util.List;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
 
 public class CourseRepository {
 	CourseCRUD coursesCRUD;
+	Connection connect;
 	
 	public CourseRepository(CourseCRUD c) {
 		this.coursesCRUD = c;
 		
-		/* Connect to databse */
+		/*== Connect to database ==*/
+		String url = "jdbc:mysql://localhost/courses?user=root&password=root";
+		connect = null;
+		try {
+			connect = DriverManager.getConnection(url);
+//			if(connect != null) {
+//				System.out.println("Connection success");
+//			}
+		} catch (SQLException e) {
+			System.out.println("Connection failed.");
+			e.printStackTrace();
+		}
+//		closeConnection();
+	}
+	
+	public void closeConnection() {
+		if(connect != null) {
+			try {
+				connect.close();
+//				System.out.println("Closed successfully.");
+			} catch (SQLException e) {
+				System.out.println("Closing connection failed.");
+			}
+		}
 	}
 	
 	/* FILE I/O */
@@ -68,4 +95,5 @@ public class CourseRepository {
 		return courses;
 	}
 
+	/* DATABASE - JDBC */
 }
