@@ -1,4 +1,4 @@
-package aCourseProject;
+package courseProject;
 
 import java.io.Serializable;
 
