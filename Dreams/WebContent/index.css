@@ -1,0 +1,13 @@
+
+
+h1{
+	color: olive;
+}
+
+body{
+    background-image: url("Treescape.jpg");
+    background-position: inherit;
+    background-repeat: true;
+    background-repeat: repeat-x;
+    background-repeat: repeat-y;
+}
