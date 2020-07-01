@@ -47,8 +47,9 @@ public class DreamRepository {
 			System.out.println("Statement created!");
 			// Execute query
 			String insertQuery = "insert into dream_entry values (null,'"
-					+dream.getDreamTitle()+"',"+dream.getDreamDuration()+",'"
-					+dream.getDreamDescr()+"'"+dream.getDreamRecordsId()+")";
+					+dream.getDreamTitle()+"','"+dream.getDreamDate()+"',"
+					+dream.getDreamDuration()+",'"+dream.getDreamDescr()
+					+"',"+dream.getDreamRecordsId()+")";
 			System.out.println("insertQuery: " + insertQuery);
 			statement.executeUpdate(insertQuery);
 			

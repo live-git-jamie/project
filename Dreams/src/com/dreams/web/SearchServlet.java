@@ -34,10 +34,10 @@ public class SearchServlet extends HttpServlet{
 		// Print dreams
 		dreams.forEach((Dream dream) -> {
 			System.out.println("Printing ->"+dream.getDreamId());
-			printWriter.println("<h3>"+dream.getDreamDate()+"<h3/>");
-			printWriter.println("<h3>"+dream.getDreamDuration()+"<h3/>");
-			printWriter.println("<h3>"+dream.getDreamTitle()+"<h3/>");
-			printWriter.println("<h3>"+dream.getDreamDescr()+"<h3/>");
+			printWriter.println("<h3>Date	    : "+dream.getDreamDate()+"<h3/>");
+			printWriter.println("<h3>Duration   : "+dream.getDreamDuration()+"<h3/>");
+			printWriter.println("<h3>Title      : "+dream.getDreamTitle()+"<h3/>");
+			printWriter.println("<h3>Description: "+dream.getDreamDescr()+"<h3/>");
 			printWriter.println("<br/><br/><br/><br/>");
 		});
 		printWriter.println("	</body>");
